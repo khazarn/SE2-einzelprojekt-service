@@ -4,6 +4,7 @@ import at.aau.serg.models.GameResult
 import at.aau.serg.services.GameResultService
 import org.springframework.web.bind.annotation.*
 
+
 @RestController
 @RequestMapping("/game-results")
 class GameResultController(
@@ -12,12 +13,12 @@ class GameResultController(
 
     @GetMapping("/{gameResultId}")
     fun getGameResult(@PathVariable gameResultId: Long): GameResult? {
-        return gameResultService.getGameResult(gameResultId);
+        return gameResultService.getGameResult(gameResultId)
     }
 
     @GetMapping
     fun getAllGameResults(): List<GameResult> {
-        return gameResultService.getGameResults();
+        return gameResultService.getGameResults()
     }
 
     @PostMapping
